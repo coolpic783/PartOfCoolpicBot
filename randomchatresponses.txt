@@ -1,0 +1,68 @@
+@bot.event
+async def on_message(message):
+    hello = 'no variable yet!'
+    greeting = random.randint(0, 5)
+    if greeting == 1:
+        hello = 'Hi!'
+    if greeting == 2:
+        hello = 'Hi There!'
+    if greeting == 2:
+        hello = 'Hello!'
+    if greeting == 3:
+        hello = 'Hello There!'
+    if greeting == 4:
+        hello = 'Hey There!'
+    if greeting == 5:
+        hello = 'Howdy!'
+    if message.author == bot.user:
+        return
+    # each message has a bunch of attributes. Here are a few.
+
+#MESSAGE RESPONSES
+
+# check out more by print(dir(message)) for example.
+    print(
+        f"{message.channel}: {message.author}: {message.author.name}: {message.content}"
+    )
+    if message.content.startswith('$hello'):
+        await message.channel.send(hello)
+    if str(message.author) == "Firestardude#9938":
+        if 'Who Are You?' in message.content:
+            await message.channel.send(
+                "I'm you, but purple, and I don't have a boyfriend.")
+        if 'UID pls' in message.content:
+            await message.channel.send(bot.user)
+        if 'Get us the link please' in message.content:
+            await message.channel.send("Sure thing!")
+            await message.channel.send(
+                "https://repl.it/join/frkmiakl-coolpic783")
+    elif str(message.author) == "Coolpic#0882":
+        if 'Who Are You?' in message.content:
+            await message.channel.send(
+                "I'm you, but purple, and I don't have a boyfriend.")
+        if 'UID pls' in message.content:
+            await message.channel.send(bot.user)
+        if 'Get us the link please' in message.content:
+            await message.channel.send("Sure thing!")
+            await message.channel.send(
+                "https://repl.it/join/frkmiakl-coolpic783")
+    if "How many people are here?" in message.content:
+        await message.channel.send(f"```{GamingAndChill.member_count}```")
+    if 'Are you the weak Part of me, or the lazy part?' in message.content:
+        await message.channel.send("I'm the pragmatic part")
+
+    if 'Lets climb out of here. Together' in message.content:
+        await message.channel.send(
+            "Come close to me and I'll make you regret it!")
+
+    if ("Am I a mountain climber?") in message.content:
+        if ("<@768168502703947796>") in message.content:
+            await message.channel.send("No")
+
+    if ("Im proud of you!") in message.content:
+        if ("<@768168502703947796>") in message.content:
+            await message.channel.send("Thanks... I guess...")
+    if ("Good Night") in message.content:
+        await message.channel.send("Okay, bye")
+    if ("Good Morning") in message.content:
+        await message.channel.send("What's up?")
